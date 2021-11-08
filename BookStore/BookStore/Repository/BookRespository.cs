@@ -18,7 +18,7 @@ namespace BookStore.Repository
         }
         public List<BookModel> SearchBook(string title, string authorName)
         {
-            return DataSource().Where(ex => ex.Title.Contains(title)  && ex.Author.Contains(authorName)).ToList();
+            return DataSource().Where(ex => ex.Title.Contains(title)  || ex.Author.Contains(authorName)).ToList();
 
         }
         private List<BookModel> DataSource()
